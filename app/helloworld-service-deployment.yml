@@ -1,0 +1,33 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: hello-world
+spec:
+  selector:
+    app: hello
+    component: hello-world
+  type:  ClusterIP
+  ports:
+  - name:  http
+    port:  8080
+    targetPort:  8080
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hello-world-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: hello
+      component: hello-world
+  template:
+    metadata:
+      labels:
+        app: hello
+        component: hello-world
+    spec:
+      containers:
+      - name:  hello-world
+        image: helloworld
