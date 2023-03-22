@@ -1,5 +1,5 @@
 images:
-- name: customers
+- name: hello
   newName: ellinj/spring-petclinic-customers-service
   newTag: 0.21.0
 - digest: sha256:300d7105f523739b19ab0443031925ded753567a51a398e460a2348b3f1b078f
